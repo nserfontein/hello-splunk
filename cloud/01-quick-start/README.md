@@ -13,7 +13,7 @@
     - Index: helloindex
     - Review
     - Submit
-    - Start Searching
-    
+    - Start Searching     
+   
 # Resources
 http://docs.splunk.com/Documentation/SplunkCloud/6.6.3/User/SplunkCloudQuickstart

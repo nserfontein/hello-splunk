@@ -1,4 +1,4 @@
-NAME="splunk-cloud"
+NAME="splunk-enterprise"
 
 Vagrant.configure("2") do |config|
 
