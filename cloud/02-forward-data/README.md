@@ -25,8 +25,8 @@ cd /opt/splunkforwarder/bin/
 ./splunk restart
 ```
 
-# Configure data inputs
-- Splunk Cloud Account > Search > Universal Forwarder
+# TODO
+Complete
 
 # Resources
 http://docs.splunk.com/Documentation/SplunkCloud/6.6.3/User/ForwardDataToSplunkCloudFromLinux
