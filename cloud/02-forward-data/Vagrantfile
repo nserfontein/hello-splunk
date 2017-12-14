@@ -1,0 +1,15 @@
+NAME="hello-splunk"
+
+Vagrant.configure("2") do |config|
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.cpus = "1"
+  end
+
+  config.vm.define "#{NAME}-node1" do |node|
+    node.vm.box = "bento/ubuntu-16.04"
+    node.vm.provision "shell", path: "splunk.sh"
+  end
+
+end
