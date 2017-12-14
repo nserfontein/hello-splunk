@@ -4,13 +4,13 @@
 
 # Upload a file
 - Settings > Indexes > New Index
-    - Index Name: test1
+    - Index Name: helloindex
     - Max Size: 10MB
     - Retention: 1
 - Settings > Add Data > Upload > Select File > /var/log/syslog > Next
     - Source type: syslog
     - Next
-    - Index: test1
+    - Index: helloindex
     - Review
     - Submit
     - Start Searching

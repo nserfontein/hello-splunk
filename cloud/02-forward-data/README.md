@@ -21,12 +21,30 @@ dpkg -i splunkforwarder-7.0.1-2b5b15c4ee89-linux-2.6-amd64.deb
 ```bash
 cd /opt/splunkforwarder/bin/
 ./splunk start
-./splunk install app /vagrant/splunkclouduf.spl -auth admin:changeme
+./splunk install app /vagrant/splunkclouduf.spl
 ./splunk restart
 ```
 
-# TODO
-Complete
+# Forward data from files and directories to Splunk Cloud
+```bash
+# add directory monitor
+./splunk add monitor /var/log/
+
+# add file monitor 
+./splunk add monitor source /var/log/syslog
+
+# edit monitor (setting the default parameters)
+./splunk edit monitor /var/log/ -host vagrant -sourcetype syslog -index main
+
+# confirm:
+logger this is a message that will be displayed in /var/log/syslog
+```
+
+# Cleanup
+```bash
+./splunk remove monitor /var/log/
+```
 
 # Resources
 http://docs.splunk.com/Documentation/SplunkCloud/6.6.3/User/ForwardDataToSplunkCloudFromLinux
+http://docs.splunk.com/Documentation/SplunkCloud/6.6.3/User/Configureinputs
