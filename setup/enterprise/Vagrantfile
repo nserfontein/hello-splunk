@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "splunk-server" do |node|
     node.vm.box = "bento/ubuntu-16.04"
-    node.vm.provision "shell", path: "splunk-server.sh"
+    node.vm.provision "shell", path: "provision/splunk-server.sh"
 
     node.vm.network "private_network", ip: "172.28.128.10"
 
@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "splunk-forwarder1" do |node|
     node.vm.box = "bento/ubuntu-16.04"
-    node.vm.provision "shell", path: "splunk-forwarder.sh"
+    node.vm.provision "shell", path: "provision/splunk-forwarder.sh"
   end
 
 end

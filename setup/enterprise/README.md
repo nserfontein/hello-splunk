@@ -34,9 +34,26 @@ vagrant provision splunk-forwarder1
 vagrant snapshot save splunk-forwarder1 fresh
 ```
 
-# Confirm Forwarders on Server
+### Confirm Forwarders on Server
+- Main Settings > Monitoring Console
 - Run a Search > Data Summary
 
+# Troubleshooting
+### Forwarder
+```bash
+vagrant ssh splunk-forwarder1
+cd /opt/splunkforwarder/bin/
+
+./splunk list forward-server
+netstat -a | grep 9997
+```
+
+### Server
+```bash
+vagrant ssh splunk-server
+
+netstat -a | grep 9997
+```
 
 # Resources
 Pluralsight - Analyzing Machine Data with Splunk- Module 5
