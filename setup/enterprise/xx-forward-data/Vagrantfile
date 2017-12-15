@@ -1,4 +1,4 @@
-NAME="splunk-enterprise"
+NAME="splunk-cloud"
 
 Vagrant.configure("2") do |config|
 
@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "#{NAME}-node1" do |node|
     node.vm.box = "bento/ubuntu-16.04"
     node.vm.provision "shell", path: "splunk.sh"
-    node.vm.network "forwarded_port", host: 20001, guest: 8000
   end
 
 end
