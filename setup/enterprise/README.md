@@ -20,18 +20,27 @@ vagrant snapshot save splunk-server fresh
 # Configure Splunk Server
 - Browse http://172.28.128.10:8000
 
-### Setup Forwarder Monitoring
-- Main Settings > Monitoring Console
-- Sub Settings > Forwarder Monitoring Setup > Enable > Save > Continue
+### Enable Forwarding and receiving
 - Main Settings > Forwarding and receiving > Configure receiving > New
     - Port: 9997
 
-# Start Splunk Forwarder
+### Setup Forwarder Monitoring
+- Main Settings > Monitoring Console
+- Sub Settings > Forwarder Monitoring Setup > Enable > Save > Continue
+- TODO: Confirm???
+
+# Start Splunk Forwarder(s)
 ```bash
 vagrant up splunk-forwarder1 --no-provision
 vagrant snapshot save splunk-forwarder1 blank
 vagrant provision splunk-forwarder1
 vagrant snapshot save splunk-forwarder1 fresh
+```
+```bash
+vagrant up splunk-forwarder2 --no-provision
+vagrant snapshot save splunk-forwarder2 blank
+vagrant provision splunk-forwarder2
+vagrant snapshot save splunk-forwarder2 fresh
 ```
 
 ### Confirm Forwarders on Server
@@ -56,4 +65,4 @@ netstat -a | grep 9997
 ```
 
 # Resources
-Pluralsight - Analyzing Machine Data with Splunk- Module 5
+Pluralsight - Analyzing Machine Data with Splunk - Module 5
